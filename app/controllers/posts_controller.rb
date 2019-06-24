@@ -17,8 +17,13 @@ class PostsController < ApplicationController
     # @post = Post.new(params.require(:post).permit(:title,:body))
     @post = Post.new(post_params)
     if @post.save
+<<<<<<< HEAD
       # flash[:success] = "POST!"
       redirect_to posts_path, success: ('POST!')
+=======
+      flash[:success] = "POST!"
+      redirect_to posts_path
+>>>>>>> 89f4d92d65bf1806723fcb90369371fb5b58a17e
     else
       flash.now[:danger] = "Miss!"
       render 'new'
