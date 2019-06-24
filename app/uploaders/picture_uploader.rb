@@ -1,4 +1,6 @@
 class PictureUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+  process resize_to_limit: [400, 400]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -14,6 +16,9 @@ class PictureUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

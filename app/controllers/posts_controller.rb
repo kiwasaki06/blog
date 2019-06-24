@@ -17,8 +17,8 @@ class PostsController < ApplicationController
     # @post = Post.new(params.require(:post).permit(:title,:body))
     @post = Post.new(post_params)
     if @post.save
-      flash[:success] = "POST!"
-      redirect_to posts_path
+      # flash[:success] = "POST!"
+      redirect_to posts_path, success: ('POST!')
     else
       flash.now[:danger] = "Miss!"
       render 'new'
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params .require(:post).permit(:title, :body)
+    params .require(:post).permit(:title, :body, :picture)
   end
 
 end
