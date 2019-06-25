@@ -1,7 +1,9 @@
 <h2>
   <%= link_to 'new', new_post_path, class:'header-menu' %>
   posts
+  <th><%= paginate @posts %></th>
 </h2>
+
 <ul>
   <% @posts.each do |post| %>
   <li>
@@ -14,8 +16,5 @@
         method: :delete,
         data:{ confirm: 'sure?' } %>
   </li>
-
-
   <% end %>
-
 </ul>
