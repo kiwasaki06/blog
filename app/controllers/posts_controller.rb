@@ -8,6 +8,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def about
+  end
+
   def new
     @post = Post.new
   end
@@ -19,7 +22,6 @@ class PostsController < ApplicationController
     if @post.save
       # flash[:success] = "POST!"
       redirect_to posts_path, success: ('POST!')
-
     else
       flash.now[:danger] = "Miss!"
       render 'new'
@@ -33,6 +35,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      flash[:success] = "UPDATE!"
       redirect_to posts_path
     else
       render 'edit'

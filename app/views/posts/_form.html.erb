@@ -13,6 +13,11 @@
   <% end %>
 </p>
 
+<p>
+  <h3>Picture</h3>
+  <%= image_tag(@post.picture_url) if @post.picture.present? %>
+</p>
+
  <div class="field">
    <%= f.label :picture %>
    <%= f.file_field :picture, id: :post_picture %>

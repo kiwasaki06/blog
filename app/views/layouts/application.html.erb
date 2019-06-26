@@ -15,13 +15,15 @@
   </head>
 
   <body>
+
     <div class="container">
       <% flash.each do |message_type, message| %>
              <div class="alert alert-<%= message_type %>">
                <%= message %>
              </div>
            <% end %>
-      <h1><%= link_to 'home', root_path %></h1>
+      <h1><%= link_to 'Blog App', root_path %></h1>
+        <%= yield(:title) %> |Blog App
         <%= yield %>
     </div>
   </body>
