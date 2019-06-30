@@ -1,9 +1,6 @@
 <% provide(:title, "Home")%>
 <h2>
   <%= link_to 'NEW Post', new_post_path, class:'header-menu' %>
-  <%# <%= link_to 'about', about_path, class:'header-menu' %>
-
-
 </h2>
 
 <ul>
@@ -20,4 +17,6 @@
   </li>
   <% end %>
 </ul>
+
     <%= paginate @posts %>
+<h4><%= link_to 'logout', logout_path, method: :delete %></h4>

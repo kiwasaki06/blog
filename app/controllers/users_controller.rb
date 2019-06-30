@@ -8,9 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def login
+    @users = User.all
   end
 
   def new
@@ -43,7 +41,8 @@ class UsersController < ApplicationController
   end
 
   def logout
-
+    session[:user_id] = nil
+    flash[:notice] = "LOGOUT"
     render 'login'
   end
 

@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order(created_at: 'desc').page(params[:page]).per(5)
+    if  logged_in?
+      @posts = Post.all.order(created_at: 'desc').page(params[:page]).per(5)
+    else
+      @posts = 'test'
+    end
   end
 
   def show
     @post = Post.find(params[:id])
-  end
-
-  def about
   end
 
   def new
