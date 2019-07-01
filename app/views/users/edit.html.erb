@@ -1,18 +1,2 @@
 <% provide(:title, "Edit user") %>
-  <%= form_for(@user) do |f| %>
-  <%= render 'users/error_messages'%>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %><!--<br>-->
-
-    <%= f.label :password_confirmation, "Confirmmation" %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit "Change", class: "btn btn-primary" %>
-    <% end %>
+<%= render 'form' %>

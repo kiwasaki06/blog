@@ -13,6 +13,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.6.4'
 gem 'kaminari'
 gem 'bcrypt', '~> 3.1.7'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3',      '1.3.13'

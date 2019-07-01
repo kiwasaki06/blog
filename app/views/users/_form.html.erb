@@ -1,0 +1,37 @@
+<%= form_for @user do |f| %>
+<p>
+  <%= f.label :name, "name" %>
+  <%= f.text_field :name, placeholder: 'name' %>
+  <% if @user.errors.messages[:name].any? %>
+  <span class="error"><%= @user.errors.messages[:name][0] %></span>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :email, "email" %>
+  <%= f.text_field :email, placeholder: 'example@mail.com' %>
+  <% if @user.errors.messages[:email].any? %>
+  <span class="error"><%= @user.errors.messages[:email][0] %></span>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :password, "password" %>
+  <%= f.text_field :password, placeholder: 'password' %>
+  <% if @user.errors.messages[:password].any? %>
+  <span class="error"><%= @user.errors.messages[:password][0] %></span>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :password, "confirmation" %>
+  <%= f.text_field :password, placeholder: 'confirmation' %>
+  <% if @user.errors.messages[:confirmation].any? %>
+  <span class="error"><%= @user.errors.messages[:confirmation][0] %></span>
+  <% end %>
+</p>
+
+<p>
+  <%= f.submit "Change", class: "btn btn-primary" %>
+  <% end %>
+</p>
