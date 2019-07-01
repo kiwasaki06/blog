@@ -17,7 +17,7 @@
 
 <p>
   <%= f.label :password, "password" %>
-  <%= f.text_field :password, placeholder: 'password' %>
+  <%= f.password_field :password, placeholder: 'password' %>
   <% if @user.errors.messages[:password].any? %>
   <span class="error"><%= @user.errors.messages[:password][0] %></span>
   <% end %>
@@ -25,7 +25,7 @@
 
 <p>
   <%= f.label :password, "confirmation" %>
-  <%= f.text_field :password, placeholder: 'confirmation' %>
+  <%= f.password_field :password, placeholder: 'confirmation' %>
   <% if @user.errors.messages[:confirmation].any? %>
   <span class="error"><%= @user.errors.messages[:confirmation][0] %></span>
   <% end %>
